@@ -14,7 +14,7 @@ time since the last call as its argument.
 coil.update(deltatime)
 ```
 Coil refers to each cooperative thread as a *task*; new tasks can be created by
-using the `coil.add()` function. 
+using the `coil.add()` function.
 ```lua
 -- prints the word "hello" each second for 5 seconds
 coil.add(function()
@@ -58,7 +58,8 @@ running those which aren't waiting or paused. `dt` should be the amount of time
 in seconds which has passed since the function was last called.
 
 ### coil.add(fn)
-Adds a new task, the task will begin running immediately.
+Adds a new task, the task will begin running on the next call to
+`coil.update()`.
 ```lua
 -- prints "hello world" every 2 seconds
 coil.add(function()
